@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS AnimLab - Home</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00d3f3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png?v=2" type="image/png" sizes="any">
+  <link rel="icon" href="assets/icon.png?v=2" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon.png?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <img src="assets/logo.png" alt="CSS AnimLab Logo" style="height:40px;width:auto;margin-right:8px;">
+      <span>CSS AnimLab</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">
+        <img src="assets/home.svg" alt="Home" style="width:18px;height:18px;">
+        <span>Home</span>
+      </a>
+      <a href="playground.html" class="nav-link">
+        <img src="assets/playground.svg" alt="Playground" style="width:18px;height:18px;">
+        <span>Playground</span>
+      </a>
+      <a href="about.html" class="nav-link">
+        <img src="assets/about.svg" alt="About" style="width:18px;height:18px;">
+        <span>About</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1 class="hero-title">CSS AnimLab</h1>
+    <p class="hero-subtitle">
+      The browser-native CSS animation playground for developers.<br>
+      Create, tweak, and export animations without leaving your browser.
+    </p>
+    <div class="hero-actions">
+      <a href="playground.html" class="btn btn-primary">
+        <img src="assets/white-play.svg" alt="Play" style="width:18px;height:18px;"> Start Creating
+      </a>
+      <a href="about.html" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ANIMATIONS SHOWCASE -->
+  <section class="container showcase">
+    <h2 class="showcase-title">Watch CSS Animations in Action</h2>
+    <div class="animation-grid">
+      <div class="animation-card">
+        <div class="animation-demo">
+          <div class="shape demo-fade"></div>
+        </div>
+        <div class="animation-label">Fade</div>
+      </div>
+      <div class="animation-card">
+        <div class="animation-demo">
+          <div class="shape demo-bounce"></div>
+        </div>
+        <div class="animation-label">Bounce</div>
+      </div>
+      <div class="animation-card">
+        <div class="animation-demo">
+          <div class="shape demo-slide"></div>
+        </div>
+        <div class="animation-label">Slide</div>
+      </div>
+      <div class="animation-card">
+        <div class="animation-demo">
+          <div class="shape demo-spin"></div>
+        </div>
+        <div class="animation-label">Spin</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="container features">
+    <h2 class="features-title">Why Choose CSS AnimLab?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="assets/realTime.svg" alt="Real-time" style="width:32px;height:32px;">
+        </div>
+        <div class="feature-title">Real-time Preview</div>
+        <div class="feature-desc">See your animations update instantly as you adjust settings. No waiting, no guessing.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="assets/creative.svg" alt="Creative" style="width:32px;height:32px;">
+        </div>
+        <div class="feature-title">Full Control</div>
+        <div class="feature-desc">Customize timing, easing, colors, and shapes. Complete control over every detail.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="assets/export.svg" alt="Export" style="width:32px;height:32px;">
+        </div>
+        <div class="feature-title">Easy Export</div>
+        <div class="feature-desc">Export your animations as standalone HTML files. Use them anywhere, anytime.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta">
+    <h2 class="cta-title">Ready to Create Amazing Animations?</h2>
+    <p class="cta-text">Join thousands of developers creating beautiful CSS animations</p>
+    <a href="playground.html" class="btn btn-primary">Open Playground</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 CSS AnimLab. All rights reserved. | Made with <svg width="14" height="14" viewBox="0 0 24 24" fill="#00d3f3" style="display:inline;vertical-align:middle;margin:0 2px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> for developers</p>
+  </footer>
+</body>
+</html>
+<!-- img src="assets/heart.svg" alt="Love" style="display:inline;vertical-align:middle;margin:0 2px;width:14px;height:14px;" -->

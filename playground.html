@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS AnimLab - Playground</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00d3f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="assets/icon.png?v=2" type="image/png" sizes="any">
+    <link rel="icon" href="assets/icon.png?v=2" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/icon.png?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/playground.css">
+  </head>
+  <body>
+    <div class="app">
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-logo">
+          <img src="assets/logo.png" alt="CSS AnimLab Logo" style="height:40px;width:auto;margin-right:8px;">
+          <span>CSS AnimLab</span>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">
+            <img src="assets/home.svg" alt="Home" style="width:18px;height:18px;"> Home
+          </a>
+          <a href="playground.html" class="nav-link active">
+            <img src="assets/playground.svg" alt="Playground" style="width:18px;height:18px;"> Playground
+          </a>
+          <a href="about.html" class="nav-link">
+            <img src="assets/about.svg" alt="About" style="width:18px;height:18px;"> About
+          </a>
+        </nav>
+      </header>
+
+      <div class="main">
+
+        <!-- LEFT PANEL: Shape + Animation Settings -->
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Element</span>
+          </div>
+          <div class="panel-body">
+
+            <div class="sec-label">Shape</div>
+            <div class="shape-grid" id="shape-grid">
+              <button class="shape-btn active" data-shape="square" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:22px;height:22px;background:var(--accent);border-radius:3px"></div></div>
+                <span>Square</span>
+              </button>
+              <button class="shape-btn" data-shape="circle" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:22px;height:22px;background:var(--accent);border-radius:50%"></div></div>
+                <span>Circle</span>
+              </button>
+              <button class="shape-btn" data-shape="pill" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:26px;height:14px;background:var(--accent);border-radius:20px"></div></div>
+                <span>Pill</span>
+              </button>
+              <button class="shape-btn" data-shape="text" onclick="setShape(this)">
+                <div class="shape-preview" style="font-size:20px;font-weight:800;color:var(--accent)">Aa</div>
+                <span>Text</span>
+              </button>
+              <button class="shape-btn" data-shape="diamond" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:18px;height:18px;background:var(--accent);transform:rotate(45deg)"></div></div>
+                <span>Diamond</span>
+              </button>
+              <button class="shape-btn" data-shape="ring" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:22px;height:22px;border-radius:50%;border:3px solid var(--accent)"></div></div>
+                <span>Ring</span>
+              </button>
+              <button class="shape-btn" data-shape="bar" onclick="setShape(this)">
+                <div class="shape-preview"><div style="width:26px;height:8px;background:var(--accent);border-radius:2px"></div></div>
+                <span>Bar</span>
+              </button>
+              <button class="shape-btn" data-shape="star" onclick="setShape(this)">
+                <div class="shape-preview" style="font-size:22px;line-height:1;color:var(--accent)">★</div>
+                <span>Star</span>
+              </button>
+            </div>
+
+            <div class="sec-label">Fill Color</div>
+            <div class="color-row">
+              <input type="color" id="color-picker" value="#00d3f3" oninput="updateColor(this.value)">
+              <input type="text" id="color-hex" value="#00d3f3" placeholder="#hex" oninput="updateColorHex(this.value)" style="font-size:13px">
+            </div>
+
+            <div class="sec-label">Size</div>
+            <div class="control-group">
+              <div class="control-label">Width <span id="lbl-w">80px</span></div>
+              <input type="range" min="20" max="200" value="80" id="el-width" oninput="updateSize()">
+            </div>
+            <div class="control-group">
+              <div class="control-label">Height <span id="lbl-h">80px</span></div>
+              <input type="range" min="20" max="200" value="80" id="el-height" oninput="updateSize()">
+            </div>
+
+            <div class="divider"></div>
+            <div class="sec-label">Timing</div>
+
+            <div class="control-group">
+              <div class="control-label">Duration <span id="lbl-dur">1.2s</span></div>
+              <input type="range" min="1" max="50" value="12" id="anim-dur" oninput="updateTiming()">
+            </div>
+            <div class="control-group">
+              <div class="control-label">Delay <span id="lbl-delay">0s</span></div>
+              <input type="range" min="0" max="20" value="0" id="anim-delay" oninput="updateTiming()">
+            </div>
+            <div class="control-group">
+              <div class="control-label">Easing</div>
+              <select id="anim-easing" onchange="updateTiming()">
+                <option value="ease">ease</option>
+                <option value="ease-in">ease-in</option>
+                <option value="ease-out">ease-out</option>
+                <option value="ease-in-out" selected>ease-in-out</option>
+                <option value="linear">linear</option>
+                <option value="cubic-bezier(0.34,1.56,0.64,1)">spring (overshoot)</option>
+                <option value="cubic-bezier(0.68,-0.55,0.27,1.55)">bounce (back)</option>
+                <option value="steps(6,end)">steps(6)</option>
+                <option value="steps(12,end)">steps(12)</option>
+              </select>
+            </div>
+
+            <div class="playback" style="margin-top:4px">
+              <button class="play-btn" id="play-btn" onclick="togglePlay()">
+                <img src="assets/white-play.svg" alt="Play" style="width:16px;height:16px;"> Play
+              </button>
+              <button class="iter-toggle" id="iter-btn" onclick="toggleInfinite()">
+                <img src="assets/playground.svg" alt="Loop" style="width:16px;height:16px;"> Loop
+              </button>
+              <button class="btn" onclick="resetAnim()" style="padding:6px 10px;font-size:11px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2-8.83"></path></svg> Reset
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CENTER: Stage -->
+        <div class="stage-panel">
+          <div class="stage-head">
+            <span class="panel-title">Preview</span>
+            <div class="presets" id="preset-chips">
+              <button class="preset-chip active" onclick="loadPreset('fade',this)">Fade</button>
+              <button class="preset-chip" onclick="loadPreset('slide',this)">Slide</button>
+              <button class="preset-chip" onclick="loadPreset('bounce',this)">Bounce</button>
+              <button class="preset-chip" onclick="loadPreset('spin',this)">Spin</button>
+              <button class="preset-chip" onclick="loadPreset('scale',this)">Scale</button>
+              <button class="preset-chip" onclick="loadPreset('wobble',this)">Wobble</button>
+              <button class="preset-chip" onclick="loadPreset('flip',this)">Flip</button>
+              <button class="preset-chip" onclick="loadPreset('neon',this)">Neon Glow</button>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="stage-grid"></div>
+            <div class="stage-el" id="stage-el"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: Keyframes + Code -->
+        <div class="code-panel panel" style="border-left:1px solid var(--border)">
+          <div class="panel-head">
+            <span class="panel-title">@keyframes</span>
+            <button class="btn" style="padding:4px 10px;font-size:11px" onclick="addKeyframe()">+ Add stop</button>
+          </div>
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);overflow-y:auto;max-height:46%;flex-shrink:0;">
+            <div class="kf-list" id="kf-list"></div>
+            <button class="add-kf-btn" onclick="addKeyframe()">+ Add keyframe stop</button>
+          </div>
+
+          <div class="panel-head" style="border-top:1px solid var(--border)">
+            <span class="panel-title">Generated CSS</span>
+            <button class="code-copy" id="copy-btn" onclick="copyCode()">Copy</button>
+          </div>
+          <div class="code-area">
+            <div class="code-block">
+              <div class="code-block-head">
+                <span class="code-lang">CSS</span>
+              </div>
+              <pre id="code-output"></pre>
+            </div>
+            <button class="btn btn-accent" style="width:100%;margin-top:12px;padding:10px" onclick="downloadHTML()">
+              <img src="assets/export.svg" alt="Export" style="width:16px;height:16px;"> Export HTML
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/playground.js"></script>
+  </body>
+</html>

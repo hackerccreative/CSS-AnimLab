@@ -1,0 +1,20 @@
+{
+  "name": "CSS AnimLab",
+  "short_name": "AnimLab",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00d3f3",
+  "background_color": "#0a0a0f",
+  "start_url": "/",
+  "display": "standalone"
+}
