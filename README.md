@@ -7,7 +7,7 @@
 
 **Create, preview, and export production-ready CSS animations — entirely in your browser. No installs. No backend. No excuses.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-7c6af7?style=for-the-badge)](https://github.com/hackerccreative/CSS-AnimLab)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-7c6af7?style=for-the-badge)](https://css-anim-lab.vercel.app/)
 [![GitHub Stars](https://img.shields.io/github/stars/hackerccreative/CSS-AnimLab?style=for-the-badge&color=7c6af7)](https://github.com/hackerccreative/CSS-AnimLab/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-7c6af7?style=for-the-badge)](LICENSE)
 [![No Dependencies](https://img.shields.io/badge/Dependencies-Zero-34d399?style=for-the-badge)]()
